@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolflix</title>
+    <!-- AXIOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/style.css">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
+</head>
+<body>
+    <div id="root">
+        <header>
+            <input type="text" placeholder="Search something" v-model="searchInput">
+            <input type="button" value="Search" @click="searchMovies()">
+        </header>
+        <div class="results" v-for="searchResult in searchResults">
+            <div class="content">
+                <div class="title">
+                    <span>Title:</span>{{searchResult.title}}
+                </div>
+                <div class="original-title">
+                    <span>Original title:</span>{{searchResult.original_title}}
+                </div>
+                <div class="language">
+                    <span>Original language:</span>{{searchResult.original_language}}
+                </div>
+                <div class="vote">
+                    Average vote:{{searchResult.vote_average}}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- VUE -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <!-- JS -->
+    <script src="./assets/main.js"></script>
+</body>
+</html>
