@@ -6,7 +6,7 @@ let root=new Vue({
         searchInput:""
     },
     methods:{
-        getResults: function () {
+        searchMovies() {
             if (this.searchInput != '') {
               axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${this.searchInput}`)
                 .then((response) => {
