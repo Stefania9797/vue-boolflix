@@ -3,7 +3,8 @@ let root=new Vue({
     data:{
         apiKey:"b7dde1ec04c6c67918064ecac356278b",
         searchResults:null,
-        searchInput:""
+        searchInput:"",
+        flags:["en","it","fr","de","fi","ja","es"]
     },
     methods:{
         searchMovies() {
@@ -13,6 +14,9 @@ let root=new Vue({
                   this.searchResults= response.data.results;
                 });
             }
+          },
+          getFlag(language){
+            return "./assets/flags/"+language+".png"
           }
     },
     mounted(){}

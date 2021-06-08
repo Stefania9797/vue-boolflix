@@ -15,3 +15,7 @@ header{
 .content div{
     margin: 5px;
 }
+.flag{
+    width: 20px;
+    vertical-align: middle;
+}

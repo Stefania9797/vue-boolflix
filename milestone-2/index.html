@@ -28,7 +28,10 @@
                     <span>Original title:</span>{{searchResult.original_title}}
                 </div>
                 <div class="language">
-                    <span>Original language:</span>{{searchResult.original_language}}
+                    <span>Original language:</span>
+                    <img class="flag" :src="getFlag(searchResult.original_language)" :alt="searchResult.original_language"
+                    v-if="flags.includes(searchResult.original_language)">
+                    <span v-else>{{searchResult.original_language}}</span>
                 </div>
                 <div class="vote">
                     Average vote:{{searchResult.vote_average}}
