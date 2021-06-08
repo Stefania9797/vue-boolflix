@@ -3,7 +3,8 @@ let root=new Vue({
     data:{
         apiKey:"b7dde1ec04c6c67918064ecac356278b",
         searchResults:null,
-        searchInput:""
+        searchInput:"",
+        flags:["en","it","fr","de","fi","ja","es"]
     },
     methods:{
         searchMovies() {
