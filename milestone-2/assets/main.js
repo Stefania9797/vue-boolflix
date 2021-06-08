@@ -7,9 +7,9 @@ let root=new Vue({
         flags:["en","it","fr","de","fi","ja","es"]
     },
     methods:{
-        searchMovies() {
+        getResults() {
             if (this.searchInput != '') {
-              axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${this.searchInput}`)
+              axios.get(`https://api.themoviedb.org/3/search/multi?api_key=${this.apiKey}&query=${this.searchInput}`)
                 .then((response) => {
                   this.searchResults= response.data.results;
                 });
@@ -17,7 +17,7 @@ let root=new Vue({
           },
           getFlag(language){
             return "./assets/flags/"+language+".png"
-          }
+          },
     },
     mounted(){}
 })

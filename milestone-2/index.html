@@ -17,15 +17,19 @@
     <div id="root">
         <header>
             <input type="text" placeholder="Search something" v-model="searchInput">
-            <input type="button" value="Search" @click="searchMovies()">
+            <input type="button" value="Search" @click="getResults()">
         </header>
         <div class="results" v-for="searchResult in searchResults">
             <div class="content">
                 <div class="title">
-                    <span>Title:</span>{{searchResult.title}}
+                    <span>Title:</span> 
+                    <span v-if="searchResult.media_type=='movie'">{{searchResult.title}}</span>
+                    <span v-else>{{searchResult.name}}</span>
                 </div>
                 <div class="original-title">
-                    <span>Original title:</span>{{searchResult.original_title}}
+                    <span>Original title:</span> 
+                    <span v-if="searchResult.media_type=='movie'">{{searchResult.original_title}}</span>
+                    <span v-else>{{searchResult.original_name}}</span>
                 </div>
                 <div class="language">
                     <span>Original language:</span>
