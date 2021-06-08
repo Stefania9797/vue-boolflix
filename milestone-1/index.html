@@ -15,7 +15,15 @@
 </head>
 <body>
     <div id="root">
-        
+        <header>
+            <input type="text" placeholder="Cerca Film e Serie TV" v-model="searchInput">
+            <input type="button" value="Cerca" @click="getResults()">
+        </header>
+        <div class="results" v-for="searchResult in searchResults" >
+            <div class="title">
+                {{searchResult.title}}
+            </div>
+        </div>
     </div>
     
     <!-- VUE -->
