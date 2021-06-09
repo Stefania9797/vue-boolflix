@@ -19,8 +19,8 @@ let root=new Vue({
             return "./assets/flags/"+language+".png"
           },
           getPoster(img){
-            return "https://image.tmdb.org/t/p/w92"+img
-          }
+            return "https://image.tmdb.org/t/p/w185"+img
+          },
     },
     mounted(){
     }

@@ -27,8 +27,9 @@
                     <span v-else>{{searchResult.name}}</span>
                 </div>
                 <div class="poster">
-                    <img v-if="searchResult.media_type=='tv'" :src="getPoster(searchResult.poster_path)" alt="movie poster">
-                    <img v-else-if="searchResult.media_type=='movie'" :src="getPoster(searchResult.backdrop_path)" alt="">
+                    <img class="cover" v-if="searchResult.poster_path!=null" :src="getPoster(searchResult.poster_path)" alt="tv poster">
+                    <img class="cover" v-else-if="searchResult.backdrop_path!=null" :src="getPoster(searchResult.backdrop_path)" alt="movie poster">
+                    <img class="cover" v-else src="http://www.asdalcione.it/wp-content/uploads/2016/08/jk-placeholder-image-1.jpg" alt="">
                 </div>
                 <div class="original-title">
                     <span>Original title:</span> 
