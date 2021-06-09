@@ -2,22 +2,74 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif
+}
+body{
+    background-color: rgb(58, 58, 58);
+    height: 100vh;
 }
 header{
     background-color: black;
     padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+h1{
+    color: red;
+    text-transform: uppercase;
+}
+input{
+    padding: 5px;
 }
 .content{
-    display: flex;
-    flex-direction: column;
     padding: 10px;
 }
 .content div{
     margin: 5px;
 }
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color:rgb(58, 58, 58)
+}
+.results{
+    width: 300px;
+}
 .flag{
     width: 20px;
     vertical-align: middle;
+}
+.content{
+    position: relative;
+}
+.info{
+    position: absolute;
+    bottom: 60%;
+    color: white;
+     display: none;
+}
+.poster::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 95%;
+    height: 95%;
+    margin: 10px;
+    background-color: black;
+    display: none;
+}
+.content:hover .poster::after{
+    display: block;
+}
+.content:hover .info{
+    display: block;
+}
+
+.poster img, .poster{
+    width: 100%;
 }
 .cover{
     width: 100px;

@@ -16,39 +16,52 @@
 <body>
     <div id="root">
         <header>
-            <input type="text" placeholder="Search something" v-model="searchInput">
-            <input type="button" value="Search" @click="getResults()">
+            <h1>Boolflix</h1>
+            <div class="search">
+                <input type="text" placeholder="Search something" v-model="searchInput">
+                <input class="button" type="button" value="Search" @click="getResults()">
+            </div>
         </header>
-        <div class="results" v-for="searchResult in searchResults">
-            <div class="content">
-                <div class="title">
-                    <span>Title:</span> 
-                    <span v-if="searchResult.media_type=='movie'">{{searchResult.title}}</span>
-                    <span v-else>{{searchResult.name}}</span>
-                </div>
-                <div class="poster">
-                    <img class="cover" v-if="searchResult.poster_path!=null" :src="getPoster(searchResult.poster_path)" alt="tv poster">
-                    <img class="cover" v-else-if="searchResult.backdrop_path!=null" :src="getPoster(searchResult.backdrop_path)" alt="movie poster">
-                    <img class="cover" v-else src="http://www.asdalcione.it/wp-content/uploads/2016/08/jk-placeholder-image-1.jpg" alt="">
-                </div>
-                <div class="original-title">
-                    <span>Original title:</span> 
-                    <span v-if="searchResult.media_type=='movie'">{{searchResult.original_title}}</span>
-                    <span v-else>{{searchResult.original_name}}</span>
-                </div>
-                <div class="language">
-                    <span>Original language:</span>
-                    <img class="flag" :src="getFlag(searchResult.original_language)" :alt="searchResult.original_language"
-                    v-if="flags.includes(searchResult.original_language)">
-                    <span v-else>{{searchResult.original_language}}</span>
-                </div>
-                <div class="vote">
-                    <span>Rating: </span>
-                    <i class="fas fa-star" v-for="vote in getStars(searchResult.vote_average)"></i>
-                    <i class="far fa-star" v-for="vote in (5 - getStars(searchResult.vote_average))"></i>
+        <main>
+
+            <div class="results" v-for="searchResult in searchResults">
+                <div class="content">
+                    <div class="poster">
+                            <img class="cover" v-if="searchResult.poster_path!=null" :src="getPoster(searchResult.poster_path)" alt="tv poster">
+                            <img class="cover" v-else-if="searchResult.backdrop_path!=null" :src="getPoster(searchResult.backdrop_path)" alt="movie poster">
+                            <img class="cover" v-else src="http://www.asdalcione.it/wp-content/uploads/2016/08/jk-placeholder-image-1.jpg" alt="">
+                    </div>
+                    <div class="info">
+
+                        <div class="title">
+                            <span>Title:</span> 
+                            <span v-if="searchResult.media_type=='movie'">{{searchResult.title}}</span>
+                            <span v-else>{{searchResult.name}}</span>
+                        </div>
+                        <div class="original-title">
+                            <span>Original title:</span> 
+                            <span v-if="searchResult.media_type=='movie'">{{searchResult.original_title}}</span>
+                            <span v-else>{{searchResult.original_name}}</span>
+                        </div>
+                        <div class="language">
+                            <span>Original language:</span>
+                            <img class="flag" :src="getFlag(searchResult.original_language)" :alt="searchResult.original_language"
+                            v-if="flags.includes(searchResult.original_language)">
+                            <span v-else>{{searchResult.original_language}}</span>
+                        </div>
+                        <div class="vote">
+                            <span>Rating: </span>
+                            <i class="fas fa-star" v-for="vote in getStars(searchResult.vote_average)"></i>
+                            <i class="far fa-star" v-for="vote in (5 - getStars(searchResult.vote_average))"></i>
+                        </div>
+                        <div class="overview">
+                            <span>Overview:</span>
+                            <!-- <span>{{searchResult.overview}}</span> -->
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </main>
     </div>
     
     <!-- VUE -->
