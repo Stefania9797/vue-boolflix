@@ -26,6 +26,10 @@
                     <span v-if="searchResult.media_type=='movie'">{{searchResult.title}}</span>
                     <span v-else>{{searchResult.name}}</span>
                 </div>
+                <div class="poster">
+                    <img v-if="searchResult.media_type=='tv'" :src="getPoster(searchResult.poster_path)" alt="movie poster">
+                    <img v-else-if="searchResult.media_type=='movie'" :src="getPoster(searchResult.backdrop_path)" alt="">
+                </div>
                 <div class="original-title">
                     <span>Original title:</span> 
                     <span v-if="searchResult.media_type=='movie'">{{searchResult.original_title}}</span>

@@ -18,6 +18,10 @@ let root=new Vue({
           getFlag(language){
             return "./assets/flags/"+language+".png"
           },
+          getPoster(img){
+            return "https://image.tmdb.org/t/p/w92"+img
+          }
     },
-    mounted(){}
+    mounted(){
+    }
 })
