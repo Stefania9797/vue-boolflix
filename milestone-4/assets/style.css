@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    background-color: black;
+    padding: 10px;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.content div{
+    margin: 5px;
+}
+.flag{
+    width: 20px;
+    vertical-align: middle;
+}
+.cover{
+    width: 100px;
+}
+.fa-star{
+    color: orangered;
+}
