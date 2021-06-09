@@ -21,6 +21,9 @@ let root=new Vue({
           getPoster(img){
             return "https://image.tmdb.org/t/p/w185"+img
           },
+          getStars(voto) {
+            return Math.ceil(voto / 2);
+        },
     },
     mounted(){
     }

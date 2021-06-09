@@ -43,7 +43,9 @@
                     <span v-else>{{searchResult.original_language}}</span>
                 </div>
                 <div class="vote">
-                    Average vote:{{searchResult.vote_average}}
+                    <span>Rating: </span>
+                    <i class="fas fa-star" v-for="vote in getStars(searchResult.vote_average)"></i>
+                    <i class="far fa-star" v-for="vote in (5 - getStars(searchResult.vote_average))"></i>
                 </div>
             </div>
         </div>
