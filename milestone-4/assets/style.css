@@ -29,6 +29,8 @@ input{
     margin: 5px;
 }
 main{
+    width: 70%;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -38,35 +40,40 @@ main{
     width: 300px;
 }
 .flag{
-    width: 20px;
-    vertical-align: middle;
+    width: 30px;
 }
 .content{
     position: relative;
 }
-.results {
-    width: 200px;
-    height: 300px;
+.results, .content, .poster {
+    width: 300px;
+    height: 400px;
+}
+.results{
     margin: 10px;
 }
 .results .cover{
-    width: 200px;
-    height:300px;
+    width: 300px;
+    height:400px;
     object-fit: cover;
 }
 .info{
     position: absolute;
-    top: 5%;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
     color: white;
-     display: none;
+    display: none;
+    padding: 5px;
 }
 .poster::after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    width: 205px;
-    height: 305px;
+    width: 305px;
+    height: 405px;
     margin: 10px;
     background-color: black;
     display: none;

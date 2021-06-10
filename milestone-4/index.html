@@ -34,29 +34,29 @@
                     <div class="info">
 
                         <div class="title">
-                            <span>Title:</span> 
+                            <h4>Title:</h4> 
                             <span v-if="searchResult.media_type=='movie'">{{searchResult.title}}</span>
                             <span v-else>{{searchResult.name}}</span>
                         </div>
                         <div class="original-title">
-                            <span>Original title:</span> 
+                            <h4>Original title:</h4> 
                             <span v-if="searchResult.media_type=='movie'">{{searchResult.original_title}}</span>
                             <span v-else>{{searchResult.original_name}}</span>
                         </div>
                         <div class="language">
-                            <span>Original language:</span>
+                            <h4>Original language:</h4>
                             <img class="flag" :src="getFlag(searchResult.original_language)" :alt="searchResult.original_language"
                             v-if="flags.includes(searchResult.original_language)">
                             <span v-else>{{searchResult.original_language}}</span>
                         </div>
                         <div class="vote">
-                            <span>Rating: </span>
+                            <h4>Rating: </h4>
                             <i class="fas fa-star" v-for="vote in getStars(searchResult.vote_average)"></i>
                             <i class="far fa-star" v-for="vote in (5 - getStars(searchResult.vote_average))"></i>
                         </div>
                         <div class="overview">
-                            <span>Overview:</span>
-                            <!-- <span>{{searchResult.overview}}</span> -->
+                            <h4>Overview:</h4>
+                            <span>{{searchResult.overview}}</span>
                         </div>
                     </div>
                 </div>
