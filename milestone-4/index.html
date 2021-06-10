@@ -18,7 +18,7 @@
         <header>
             <h1>Boolflix</h1>
             <div class="search">
-                <input type="text" placeholder="Search something" v-model="searchInput">
+                <input type="text" placeholder="Search something" v-model="searchInput" @keyup.enter="getResults()">
                 <input class="button" type="button" value="Search" @click="getResults()">
             </div>
         </header>
