@@ -19,7 +19,7 @@ let root=new Vue({
             return "./assets/flags/"+language+".png"
           },
           getPoster(img){
-            return "https://image.tmdb.org/t/p/w342"+img
+            return "https://image.tmdb.org/t/p/w185"+img
           },
           getStars(voto) {
             return Math.ceil(voto / 2);

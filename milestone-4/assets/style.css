@@ -44,9 +44,19 @@ main{
 .content{
     position: relative;
 }
+.results {
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+}
+.results .cover{
+    width: 200px;
+    height:300px;
+    object-fit: cover;
+}
 .info{
     position: absolute;
-    bottom: 60%;
+    top: 5%;
     color: white;
      display: none;
 }
@@ -55,8 +65,8 @@ main{
     position: absolute;
     top: 0;
     left: 0;
-    width: 95%;
-    height: 95%;
+    width: 205px;
+    height: 305px;
     margin: 10px;
     background-color: black;
     display: none;
