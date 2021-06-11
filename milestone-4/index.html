@@ -47,13 +47,10 @@
                             v-if="flags.includes(searchResult.original_language)">
                             <span v-else>{{searchResult.original_language}}</span>
                         </div>
-                        <div v-if="searchResults.vote_average>0"class="vote">
+                        <div class="vote">
                             <h4>Rating: </h4>
                             <i class="fas fa-star" v-for="vote in getStars(searchResult.vote_average)"></i>
                             <i class="far fa-star" v-for="vote in (5 - getStars(searchResult.vote_average))"></i>
-                        </div>
-                        <div v-else class="vote">
-                            <h4>Rating not available</h4>
                         </div>
                         <div class="overview">
                             <h4>Overview:</h4>
